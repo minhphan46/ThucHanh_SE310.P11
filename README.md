@@ -51,6 +51,7 @@ Scaffold-DbContext "Your ConnectionString" Microsoft.EntityFrameworkCore.SqlServ
 ## 8. Image demo
 
 ![Login](./assets/login.png)
+![SignUp](./assets/Signup.png)
 ![category](./assets/category.png)
 ![product](./assets/allProducts.png)
 ![detail product](./assets/detailProduct.png)

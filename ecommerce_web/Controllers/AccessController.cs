@@ -35,6 +35,43 @@ namespace ecommerce_web.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult SignUp()
+        {
+            if (HttpContext.Session.GetString("UserName") == null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Access");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult SignUp(TUser user)
+        {
+            if (HttpContext.Session.GetString("UserName") == null)
+            {
+                // check user is exit
+                var u = db.TUsers.Where(x => x.Username.Equals(user.Username)).FirstOrDefault();
+                if (u != null)
+                {
+                    ViewBag.Message = "User is exit";
+                    return RedirectToAction("Login", "Access");
+                }
+
+                user.LoaiUser = 0;
+
+                db.TUsers.Add(user);
+                db.SaveChanges();
+                ViewBag.Message = "Sign up success";
+
+                return RedirectToAction("Login", "Access");
+            }
+            return View();
+        }
+
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();

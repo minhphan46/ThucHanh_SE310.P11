@@ -42,3 +42,17 @@ Scaffold-DbContext "Your ConnectionString" Microsoft.EntityFrameworkCore.SqlServ
 
 - Client: https://localhost:5050
 - Admin: https://localhost:5050/admin
+
+## 7. Tài khoản
+
+- username: a
+- password: 1
+
+## 8. Image demo
+
+![Login](./assets/login.png)
+![category](./assets/category.png)
+![product](./assets/allProducts.png)
+![detail product](./assets/detailProduct.png)
+![Admin Product](./assets/productAdmin.png)
+![Admin User](./assets/userAdmin.png)
